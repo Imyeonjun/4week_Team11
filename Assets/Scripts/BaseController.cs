@@ -22,6 +22,11 @@ public class BaseController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    protected virtual void Start()
+    {
+
+    }
+
     // 매 프레임 호출, 입력 및 회전 처리 등 매 순간 업데이트가 필요한 처리.
     protected virtual void Update()
     {
