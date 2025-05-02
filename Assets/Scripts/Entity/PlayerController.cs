@@ -29,10 +29,10 @@ public class PlayerController : BaseController // BaseController를 상속받는 플레
         Vector2 mousePosition = Input.mousePosition;
 
         // 화면 좌표를 월드 좌표로 변환 (카메라 기준)
-        Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
+        Vector2 worldPosition = camera.ScreenToWorldPoint(mousePosition);
 
         // 플레이어 위치 기준으로 마우스까지의 방향 벡터 계산
-        lookDirection = (worldPos - (Vector2)transform.position);
+        lookDirection = (worldPosition - (Vector2)transform.position);
 
         // --- 3. 회전 방향 설정 ---
 

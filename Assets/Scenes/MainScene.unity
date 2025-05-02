@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 1626222654}
   - component: {fileID: 1626222655}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,9 +308,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1724604904}
-  - component: {fileID: 1724604907}
-  - component: {fileID: 1724604906}
   - component: {fileID: 1724604905}
+  - component: {fileID: 1724604906}
+  - component: {fileID: 1724604907}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -349,7 +349,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
