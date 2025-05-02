@@ -16,10 +16,13 @@ public class BaseController : MonoBehaviour
     protected Vector2 lookDirection = Vector2.zero;
     public Vector2 LookDirection { get { return lookDirection; } }
 
+    protected AnimationHandler animationHandler;
+
     // 컴포넌트 초기화 (어웨이크는 가장 먼저 실행됨)
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        animationHandler = GetComponent<AnimationHandler>();
     }
 
     protected virtual void Start()
@@ -50,6 +53,7 @@ public class BaseController : MonoBehaviour
     {
         direction = direction * 5; // 이동 속도 설정 (5)
         _rigidbody.velocity = direction; // 물리적 이동 적용
+        animationHandler.Move(direction);
     }
 
     // 캐릭터가 바라보는 방향에 따라 스프라이트 반전 처리
