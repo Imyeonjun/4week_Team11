@@ -3281,6 +3281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626222654}
   - component: {fileID: 1626222655}
+  - component: {fileID: 1626222656}
   m_Layer: 0
   m_Name: MainSprite
   m_TagString: Untagged
@@ -3355,6 +3356,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1626222656
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626222653}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bec24dc91b2e614686eeccfcc8343a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1724604903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,7 +3592,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3903,10 +3925,10 @@ Tilemap:
   - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: 6631b439361f4f04480003dcb91399ba, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 809dca9ae007acc41bc31cbc5ed7dcdf, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 809dca9ae007acc41bc31cbc5ed7dcdf, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 605eb19158cb0a0479287f354803193e, type: 3}
   - m_RefCount: 14
