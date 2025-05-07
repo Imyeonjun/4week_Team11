@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    static GameManager gameManager;
+    public static GameManager Instance;
 
     UIManager uiManager;
 
@@ -20,7 +21,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = this;
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
         uiManager = FindObjectOfType<UIManager>();
     }
 
@@ -32,25 +37,31 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        Debug.Log("Game Over");
         uiManager.SetGameOver();
-    }
-
-    public static GameManager Instance
-    {
-        get { return gameManager; }
     }
 
     public void ExitMiniGame()
     {
         SceneManager.LoadScene("MainScene");
-        isGameOver = false ;
+        isGameOver = false;
     }
 
     public void AddScore(int score)
     {
         currentScore += score;
         uiManager.UpdateScore(currentScore);
-        Debug.Log("Score: " + currentScore);
+    }
+
+    public void SaveHighScore()
+    {
+        int bestScore = PlayerPrefs.GetInt("HighScore", 0); // 저장된 최고 점수 불러오기
+
+        if (currentScore > bestScore)
+        {
+            PlayerPrefs.SetInt("HighScore", currentScore); // 최고 점수 갱신
+            PlayerPrefs.Save(); // 즉시 저장
+
+            uiManager.UpdateHighScore(currentScore);
+        }
     }
 }

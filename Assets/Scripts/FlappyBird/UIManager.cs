@@ -7,6 +7,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highscoreText;
     public TextMeshProUGUI restartText;
 
     public void Start()
@@ -34,8 +35,9 @@ public class UIManager : MonoBehaviour
     {
         scoreText.text = score.ToString();
     }
+
     public void UpdateHighScore(int highscore)
     {
-        scoreText.text = highscore.ToString();
+        highscoreText.text = highscore.ToString();
     }
 }
