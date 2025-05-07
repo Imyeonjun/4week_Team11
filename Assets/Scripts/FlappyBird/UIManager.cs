@@ -34,4 +34,8 @@ public class UIManager : MonoBehaviour
     {
         scoreText.text = score.ToString();
     }
+    public void UpdateHighScore(int highscore)
+    {
+        scoreText.text = highscore.ToString();
+    }
 }
