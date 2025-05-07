@@ -20,7 +20,6 @@ public class AddCharacterSorting : EditorWindow
                 count++;
             }
         }
-
         Debug.Log($"{count}개의 캐릭터 오브젝트에 정렬 스크립트를 추가했습니다.");
     }
 }
