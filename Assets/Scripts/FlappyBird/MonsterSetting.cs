@@ -13,11 +13,9 @@ public class MonsterSetting : MonoBehaviour
     [Header("몬스터 오브젝트")]
     public Transform monster;
 
-    GameManager gameManager;
-
     public void Start()
     {
-        gameManager = GameManager.Instance;
+
     }
 
     public Vector3 SetRandomPlace(Vector3 lastPosition, int monsterCount)
@@ -39,12 +37,4 @@ public class MonsterSetting : MonoBehaviour
 
         return placePosition;
     }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        Angel player = other.GetComponent<Angel>();
-        if (player != null)
-            gameManager.AddScore(1);
-    }
-
 }
