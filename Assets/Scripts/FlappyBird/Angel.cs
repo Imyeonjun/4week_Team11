@@ -4,6 +4,7 @@ public class Angel : MonoBehaviour
 {
     Animator animator = null;
     Rigidbody2D _rigidbody = null;
+    GameManager gameManager = null;
 
     public float flapForce = 6f;
     public float forwardSpeed = 3f;
@@ -16,6 +17,8 @@ public class Angel : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameManager.Instance;
+
         animator = transform.GetComponentInChildren<Animator>();
         _rigidbody = transform.GetComponent<Rigidbody2D>();
 
@@ -38,7 +41,7 @@ public class Angel : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
-                    // 게임 재시작
+                    gameManager.RestartGame();
                 }
             }
             else
@@ -86,5 +89,6 @@ public class Angel : MonoBehaviour
         animator.SetInteger("isDie", 1);
         isDead = true;
         deathCooldown = 1f;
+        gameManager.GameOver();
     }
 }
