@@ -5530,6 +5530,7 @@ GameObject:
   - component: {fileID: 2087703506}
   - component: {fileID: 2087703507}
   - component: {fileID: 2087703508}
+  - component: {fileID: 2087703509}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -5600,6 +5601,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionPopup: {fileID: 416033928}
+--- !u!114 &2087703509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087703505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6ae49eedb7c8c46986a5befd59343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGameScene: FlappyBirdScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

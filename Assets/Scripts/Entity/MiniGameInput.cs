@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class MiniGameInput : MonoBehaviour
 {
-    public string miniGameSceneName = "FlappyBirdScene";
+    [HideInInspector]
+    public string miniGameScene;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (CanEnterMiniGame()) // 조건을 확인 (예: UI가 켜져 있을 때)
+            if (CanEnterMiniGame())
             {
                 EnterMiniGame();
             }
@@ -17,13 +18,17 @@ public class MiniGameInput : MonoBehaviour
 
     private bool CanEnterMiniGame()
     {
-        // 예시: 상호작용 가능 영역에 들어가 있고, UI가 켜져 있을 때 등
         return true;
     }
 
     private void EnterMiniGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(miniGameSceneName);
+        if (string.IsNullOrEmpty(miniGameScene))
+        {
+            Debug.LogWarning("미니게임 씬이 설정되지 않았습니다.");
+            return;
+        }
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(miniGameScene);
     }
 }
-
