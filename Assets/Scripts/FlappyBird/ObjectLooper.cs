@@ -28,8 +28,6 @@ public class ObjectLooper : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggered: " + collision.name);
-
         // 배경 반복 배치 처리
         if (collision.CompareTag("Map"))
         {
