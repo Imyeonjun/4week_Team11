@@ -26,9 +26,5 @@ public class AddScore : MonoBehaviour
             if (player != null)
                 gameManager.AddScore(1);
         }
-        else
-        {
-            gameManager.SaveHighScore();
-        }
     }
 }
