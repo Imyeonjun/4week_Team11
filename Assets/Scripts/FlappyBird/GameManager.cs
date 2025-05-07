@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        int bestScore = PlayerPrefs.GetInt("HighScore", 0); // 저장된 최고 점수 불러오기
+        uiManager.UpdateHighScore(bestScore);
+
         uiManager.UpdateScore(0);
     }
 
