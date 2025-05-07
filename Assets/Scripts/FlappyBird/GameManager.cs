@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
         int bestScore = PlayerPrefs.GetInt("HighScore", 0); // 저장된 최고 점수 불러오기
 
         currentScore += score;
-        Debug.Log($"현재 점수: {currentScore} / 최고 점수: {bestScore}");
 
         if (currentScore > bestScore)
         {
