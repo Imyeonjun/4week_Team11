@@ -41,7 +41,7 @@ public class Angel : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
-                    gameManager.RestartGame();
+                    gameManager.ExitMiniGame();
                 }
             }
             else

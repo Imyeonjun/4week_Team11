@@ -13,8 +13,11 @@ public class AddScore : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Angel player = other.GetComponent<Angel>();
-        if (player != null)
-            gameManager.AddScore(1);
+        if (GameManager.isGameOver == false)
+        {
+            Angel player = other.GetComponent<Angel>();
+            if (player != null)
+                gameManager.AddScore(1);
+        }
     }
 }

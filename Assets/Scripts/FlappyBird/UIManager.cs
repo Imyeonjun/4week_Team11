@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     {
         if (restartText == null)
         {
-            Debug.LogError("restart text is null");
+            Debug.LogError("gmaeOverText is null");
         }
 
         if (scoreText == null)
@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
         restartText.gameObject.SetActive(false);
     }
 
-    public void SetRestart()
+    public void SetGameOver()
     {
         restartText.gameObject.SetActive(true);
     }

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     UIManager uiManager;
 
     private int currentScore = 0;
+    static public bool isGameOver = false;
 
     public UIManager UIManager
     {
@@ -30,8 +31,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        isGameOver = true;
         Debug.Log("Game Over");
-        uiManager.SetRestart();
+        uiManager.SetGameOver();
     }
 
     public static GameManager Instance
@@ -39,9 +41,10 @@ public class GameManager : MonoBehaviour
         get { return gameManager; }
     }
 
-    public void RestartGame()
+    public void ExitMiniGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainScene");
+        isGameOver = false ;
     }
 
     public void AddScore(int score)
