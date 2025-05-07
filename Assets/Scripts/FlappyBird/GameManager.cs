@@ -64,10 +64,6 @@ public class GameManager : MonoBehaviour
 
             uiManager.UpdateHighScore(currentScore);
         }
-        else
-        {
-            Debug.Log("현재 점수가 최고 점수보다 낮습니다.");
-        }
 
         uiManager.UpdateScore(currentScore);
     }
