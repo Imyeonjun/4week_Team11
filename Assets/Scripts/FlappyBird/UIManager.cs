@@ -8,11 +8,11 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highscoreText;
-    public TextMeshProUGUI restartText;
+    public TextMeshProUGUI gameOverText;
 
     public void Start()
     {
-        if (restartText == null)
+        if (gameOverText == null)
         {
             Debug.LogError("gmaeOverText is null");
         }
@@ -23,12 +23,18 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        restartText.gameObject.SetActive(false);
+        if (highscoreText == null)
+        {
+            Debug.LogError("highscoreText is null");
+            return;
+        }
+
+        gameOverText.gameObject.SetActive(false);
     }
 
     public void SetGameOver()
     {
-        restartText.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(true);
     }
 
     public void UpdateScore(int score)

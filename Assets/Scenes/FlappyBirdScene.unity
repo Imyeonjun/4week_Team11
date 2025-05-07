@@ -531,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2115398127}
   highscoreText: {fileID: 64894838}
-  restartText: {fileID: 797485460}
+  gameOverText: {fileID: 797485460}
 --- !u!1 &220935105
 GameObject:
   m_ObjectHideFlags: 0

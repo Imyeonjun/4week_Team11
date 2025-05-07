@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
 
     UIManager uiManager;
 
-    private int currentScore = 0;
     static public bool isGameOver = false;
+
+    int currentScore = 0;
 
     public UIManager UIManager
     {
@@ -48,13 +49,10 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int score)
     {
-        currentScore += score;
-        uiManager.UpdateScore(currentScore);
-    }
-
-    public void SaveHighScore()
-    {
         int bestScore = PlayerPrefs.GetInt("HighScore", 0); // 저장된 최고 점수 불러오기
+
+        currentScore += score;
+        Debug.Log($"현재 점수: {currentScore} / 최고 점수: {bestScore}");
 
         if (currentScore > bestScore)
         {
@@ -63,5 +61,11 @@ public class GameManager : MonoBehaviour
 
             uiManager.UpdateHighScore(currentScore);
         }
+        else
+        {
+            Debug.Log("현재 점수가 최고 점수보다 낮습니다.");
+        }
+
+        uiManager.UpdateScore(currentScore);
     }
 }
